@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Ana Veloso - Advocacia e Consultoria</title>
+    <style>
+        /* --- Configurações Globais e Paleta de Cores --- 
+        :root {
+            --cor-vinho: #722F3E;  /* Cor Principal 
+            --cor-bege-claro: #F5F3F1; /* Fundo 
+            --cor-texto-escuro: #333333; /* Texto principal 
+            --cor-branca: #FFFFFF;
+            --cor-dourado-suave: #C9A975; /* Detalhes e botões de destaque 
+        }
+
+        */
+            
+        :root {
+            --cor-vinho: #722F3E;  /* Cor Principal */
+            --cor-bege-claro: #F5F3F1; /* Fundo */
+            --cor-texto-escuro: #333333; /* Texto principal */
+            --cor-branca: #FFFFFF;
+            --cor-dourado-suave: #C9A975; /* Detalhes e botões de destaque */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', 'Times New Roman', Times, serif; /* Fonte elegante */
+        }
+
+        html {
+            scroll-behavior: smooth; /* Rolagem suave */
+        }
+
+        body {
+            background-color: var(--cor-bege-claro);
+            color: var(--cor-texto-escuro);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-vinho);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; border-bottom: 2px solid var(--cor-dourado-suave); padding-bottom: 5px;}
+        h3 { font-size: 1.5rem; }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* --- Barra de Navegação --- */
+        #navbar {
+            background-color: var(--cor-vinho);
+            color: var(--cor-branca);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cor-branca);
+            text-decoration: none;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        #navbar ul li a {
+            color: var(--cor-branca);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #navbar ul li a:hover {
+            color: var(--cor-dourado-suave);
+        }
+
+        /* --- Seção de Início (Hero) --- */
+        #inicio {
+            background: linear-gradient(rgba(114, 47, 62, 0.8), rgba(114, 47, 62, 0.8)), url('https://images.unsplash.com/photo-1589996461159-a1d8ac3c3de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: var(--cor-branca);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px; /* Para compensar a navbar */
+        }
+
+        #inicio h1 {
+            color: var(--cor-branca);
+            font-size: 3.5rem;
+        }
+
+        #inicio p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-dourado-suave);
+            color: var(--cor-branca);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b89a6a; /* Tom mais escuro do dourado */
+        }
+
+        /* --- Seção Sobre --- */
+        #sobre .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        #sobre .sobre-img {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        #sobre .sobre-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 5px solid var(--cor-branca);
+        }
+
+        #sobre .sobre-texto {
+            flex: 2;
+        }
+
+        /* --- Áreas de Atuação --- */
+        #atuacao {
+            background-color: var(--cor-branca);
+        }
+        
+        #atuacao .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        #atuacao .area-card {
+            background: var(--cor-bege-claro);
+            border: 1px solid #ddd;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #atuacao .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        #atuacao .area-card .icone {
+            font-size: 3rem;
+            color: var(--cor-vinho);
+            margin-bottom: 15px;
+        }
+
+        /* --- Contato --- */
+        #contato .container {
+            display: flex;
+            gap: 40px;
+        }
+
+        #contato .contato-info {
+            flex: 1;
+        }
+
+        #contato .contato-info ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        #contato .contato-info li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        #contato .contato-form {
+            flex: 1;
+        }
+
+        #contato .form-group {
+            margin-bottom: 20px;
+        }
+
+        #contato label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #contato input,
+        #contato textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+        }
+
+        #contato textarea {
+            height: 150px;
+        }
+
+        #contato .btn {
+            background-color: var(--cor-vinho);
+        }
+        #contato .btn:hover {
+            background-color: #5a2531; /* Vinho mais escuro */
+        }
+
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: var(--cor-vinho);
+            color: var(--cor-branca);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* --- Responsividade (Celular) --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            #inicio h1 { font-size: 2.8rem; }
+            
+            #navbar .container {
+                flex-direction: column;
+            }
+
+            #navbar ul {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #navbar ul li a {
+                padding: 5px 8px;
+            }
+
+            #inicio {
+                height: auto;
+                padding: 150px 0 50px 0;
+            }
+
+            #sobre .container,
+            #contato .container {
+                flex-direction: column;
+            }
+
+            #atuacao .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container">
+            <a href="#inicio" class="logo">Dra. Ana Veloso</a>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#atuacao">Áreas de Atuação</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio">
+        <h1>Advocacia com Excelência e Compromisso</h1>
+        <p>Soluções jurídicas personalizadas para proteger seus direitos.</p>
+        <a href="#contato" class="btn">Agende uma Consulta</a>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <div class="container">
+                <div class="sobre-img">
+                    <img src="perfil.jpg" alt="Foto da Advogada">
+                </div>
+                <div class="sobre-texto">
+                    <h2>Dra. Ana Veloso</h2>
+                    <p>Com mais de 8 anos de experiência, sou especializada em Direito do Trabalho e Processo do Trabalho, oferecendo um atendimento jurídico pautado pela ética, transparência e dedicação integral aos interesses dos meus clientes.</p>
+                    <p>Minha missão é fornecer assessoria jurídica de alta qualidade, buscando sempre a solução mais eficaz e estratégica para cada caso. Acredito em uma advocacia humanizada, onde cada cliente recebe atenção individualizada e suporte completo em todas as etapas do processo.</p>
+                    <p><strong>Formação:</strong></p>
+                    <ul>
+                        <li>Pós-graduada em Direito do Trabalho e Processo do Trabalho pela ESA (OAB - PE) </li>
+                        <li>Graduada em Direito pela Universidade Católica de Pernambuco</li>
+                        <li>OAB/PE nº 65.468</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="atuacao">
+            <div class="container">
+                <h2>Áreas de Atuação</h2>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <div class="icone">⚖️</div> <h3>Direito de Família</h3>
+                        <p>Divórcio, guarda de menores, pensão alimentícia, inventário e partilha de bens.</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="icone">🏛️</div>
+                        <h3>Direito Civil</h3>
+                        <p>Contratos, responsabilidade civil, direito do consumidor, usucapião e questões imobiliárias.</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="icone">💼</div>
+                        <h3>Direito do Trabalho</h3>
+                        <p>Consultoria para empresas (compliance) e defesa dos direitos do trabalhador (reclamações).</p>
+                    </div>
+                    <div class="area-card">
+                        <div class="icone">💵</div>
+                        <h3>Direito do Consumidor</h3>
+                        <p>Proteção completa nas relações de consumo. Atuamos contra práticas abusivas, produtos defeituosos, cobranças indevidas e propaganda enganosa, garantindo seus direitos.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <div class="contato-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Estou à disposição para analisar seu caso. Agende uma consulta inicial.</p>
+                    <ul>
+                        <li><strong>Email:</strong> anasara.v21@gmail.com</li>
+                        <li><strong>Telefone/WhatsApp:</strong> (81) 98613-4415</li>
+                        <li><strong>Endereço:</strong> Recife - PE</li>
+                    </ul>
+                </div>
+                <div class="contato-form">
+                    <h3>Envie uma mensagem</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" name="assunto">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Desenvolvido por Luiz Veloso. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
